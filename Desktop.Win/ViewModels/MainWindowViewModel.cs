@@ -203,7 +203,7 @@ namespace Remotely.Desktop.Win.ViewModels
 
         public async Task Init()
         {
-            StatusMessage = "Retrieving...";
+            StatusMessage = "Connexion...";
 
             Host = _configService.GetConfig().Host;
 
@@ -226,7 +226,7 @@ namespace Remotely.Desktop.Win.ViewModels
                         App.Current?.Dispatcher?.Invoke(() =>
                         {
                             Viewers.Clear();
-                            StatusMessage = "Disconnected";
+                            StatusMessage = "Déconnecté";
                         });
                         return Task.CompletedTask;
                     };
@@ -236,7 +236,7 @@ namespace Remotely.Desktop.Win.ViewModels
                         App.Current?.Dispatcher?.Invoke(() =>
                         {
                             Viewers.Clear();
-                            StatusMessage = "Reconnecting";
+                            StatusMessage = "Reconnexion";
                         });
                         return Task.CompletedTask;
                     };
@@ -261,8 +261,8 @@ namespace Remotely.Desktop.Win.ViewModels
             }
 
             // If we got here, something went wrong.
-            StatusMessage = "Failed";
-            MessageBox.Show(Application.Current.MainWindow, "Failed to connect to server.", "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Warning);
+            StatusMessage = "Erreur";;.
+            MessageBox.Show(Application.Current.MainWindow, "Erreur de connexion aux serveur LENS GROUP. Contactez l'assistance.", "Erreur de connexion", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         public void PromptForHostName()
