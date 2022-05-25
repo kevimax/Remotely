@@ -261,7 +261,7 @@ namespace Remotely.Desktop.Win.ViewModels
             }
 
             // If we got here, something went wrong.
-            StatusMessage = "Erreur";;.
+            StatusMessage = "Erreur";
             MessageBox.Show(Application.Current.MainWindow, "Erreur de connexion aux serveur LENS GROUP. Contactez l'assistance.", "Erreur de connexion", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
