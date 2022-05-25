@@ -33,7 +33,7 @@
 
     <Grid>
         <StackPanel>
-            <Border Height="50" Background="#e1e1e1">
+            <Border Height="40" Background="#e1e1e1">
                 <Grid Margin="10,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -41,8 +41,8 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Height="45" Width="45"  Margin="0,0,10,0" Source="{Binding Icon}"></Image>
-                    <TextBlock Grid.Column="1" Text="Lens Assist'"  Foreground="#000000" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" />
+                    <Image Grid.Column="0" Height="30" Width="30"  Margin="0,0,10,0" Source="{Binding Icon}"></Image>
+                    <TextBlock Grid.Column="1" Text="Lens Assist'"  Foreground="#000000" FontSize="20" VerticalAlignment="Center" />
                     <Button Grid.Column="2" Style="{StaticResource TitlebarButton}" Click="MinimizeButton_Click" Content="____" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}"/>
                     <Button Grid.Column="3" Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" />
                 </Grid>
@@ -54,7 +54,7 @@
                 <StackPanel Grid.Column="0" Margin="0,0,15,0">
                     <TextBlock Style="{StaticResource SectionHeader}"><Run Text="Identifiants à communiquer à votre technicien"/></TextBlock>
                     <TextBlock FontSize="16" Margin="0,10,0,5"><Run Text="Your Session ID:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="center" Foreground="#FF4242" FontSize="20" Text="{Binding StatusMessage}" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="center" Foreground="#FF4242" FontSize="20" Text="{Binding StatusMessage}"/>
                     <Grid Margin="0,10,0,0">
                         <Button HorizontalAlignment="Right" Style="{StaticResource NormalButton}" Click="CopyLinkButton_Click">
                             Copier
