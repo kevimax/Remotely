@@ -42,7 +42,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Height="30" Width="30"  Margin="0,0,10,0" Source="{Binding Icon}"></Image>
-                    <TextBlock Grid.Column="1" Text="Lens Assist'"  Foreground="#000000" FontSize="20" VerticalAlignment="Center" />
+                    <TextBlock Grid.Column="1" Text="LensAssist'"  Foreground="#000000" FontSize="20" VerticalAlignment="Center" />
                     <Button Grid.Column="2" Style="{StaticResource TitlebarButton}" Click="MinimizeButton_Click" Content="____" Foreground="{Binding TitleButtonForegroundColor}" Background="#e1e1e1"/>
                     <Button Grid.Column="3" Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="#e1e1e1" />
                 </Grid>
