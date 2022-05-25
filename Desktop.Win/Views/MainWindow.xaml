@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Remotely.Desktop.Win.Views"
         xmlns:ViewModels="clr-namespace:Remotely.Desktop.Win.ViewModels"
         mc:Ignorable="d"
-        Title="{Binding ProductName}" Height="250" Width="350" 
+        Title="{Binding ProductName}" Height="200" Width="350" 
         WindowStyle="None" 
         ResizeMode="NoResize"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
@@ -54,12 +54,7 @@
                 <StackPanel Grid.Column="0" Margin="0,0,15,0">
                     <TextBlock FontSize="16"><Run Text="Identifiants à communiquer à votre technicien"/></TextBlock>
                     <TextBlock  Margin="0,10,0,5"><Run Text="Your Session ID:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="center" Foreground="#FF4242" FontSize="20" Text="{Binding StatusMessage}"/>
-                    <Grid Margin="0,10,0,0">
-                        <Button HorizontalAlignment="Right" Style="{StaticResource NormalButton}" Click="CopyLinkButton_Click">
-                            Copier
-                        </Button>
-                    </Grid>
+                    <TextBlock HorizontalAlignment="center" Foreground="#FF4242" FontSize="30" Text="{Binding StatusMessage}"/>
                 </StackPanel>
             </Grid>
         </StackPanel>
