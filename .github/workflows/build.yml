@@ -25,7 +25,8 @@ on:
     inputs:
       serverUrl:
         description: 'Server URL'     
-        required: true
+        required: false
+        default: 'https://support.lens-informatique.fr:4430'
       rid:
         description: 'Server Runtime Identifier'     
         required: false
@@ -109,7 +110,7 @@ jobs:
       with:
         # Comment out the below 'repository' line if you want to build from
         # your fork instead of the author's.
-        repository: lucent-sea/Remotely
+        repository: kevimax/Remotely
         fetch-depth: 0
 
     # Test the Server URL to make sure it's valid
