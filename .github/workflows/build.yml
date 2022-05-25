@@ -25,8 +25,7 @@ on:
     inputs:
       serverUrl:
         description: 'Server URL'     
-        required: false
-        default: 'https://support.lens-informatique.fr:4430'
+        required: true
       rid:
         description: 'Server Runtime Identifier'     
         required: false
