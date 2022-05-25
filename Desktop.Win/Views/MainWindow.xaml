@@ -76,8 +76,8 @@
                 Click="OptionsButton_Click">
             <Button.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Elevate to Admin" Command="{Binding Path=ElevateToAdminCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
-                    <MenuItem Header="Elevate to Service" Command="{Binding Path=ElevateToServiceCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
+                    <MenuItem Header="Droits Admin" Command="{Binding Path=ElevateToAdminCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
+                    <MenuItem Header="Droits Service" Command="{Binding Path=ElevateToServiceCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
                 </ContextMenu>
             </Button.ContextMenu>
             <Rectangle Fill="{StaticResource GearBrush}"></Rectangle>
