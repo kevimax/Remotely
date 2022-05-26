@@ -53,7 +53,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Margin="0,0,15,0">
+                <StackPanel Grid.Column="0" Margin="0,0,0,0">
                     <TextBlock FontSize="18"><Run Text="Identifiant:"/></TextBlock>
                     <TextBlock Margin="0,20,0,0" HorizontalAlignment="center" VerticalAlignment="center" Foreground="#FF4242" FontSize="30" Text="{Binding StatusMessage}">
                         <TextBlock.Effect>
@@ -79,6 +79,7 @@
                 HorizontalContentAlignment="Stretch"
                 Margin="10,5"
                 Command="{Binding Path=reconnectcommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
+                Visibility="{Binding Path=hidereconnectbutton, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
             <Rectangle Fill="{StaticResource GearBrush}"></Rectangle>
         </Button>
                  <TextBlock HorizontalAlignment="right" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="10" Text="Powered by LENS GROUP"/>
