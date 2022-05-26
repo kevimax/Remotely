@@ -200,6 +200,72 @@ namespace Remotely.Desktop.Win.ViewModels
                 StatusMessage = _sessionId;
             });
         }
+        
+         public ICommand reconnectcommand
+        {
+            StatusMessage = "Connexion...";
+
+            Host = _configService.GetConfig().Host;
+
+            while (string.IsNullOrWhiteSpace(Host))
+            {
+                Host = "https://";
+                PromptForHostName();
+            }
+
+            _conductor.ProcessArgs(new string[] { "-mode", "Normal", "-host", Host });
+
+            try
+            {
+                var result = await _casterSocket.Connect(_conductor.Host);
+
+                if (result)
+                {
+                    _casterSocket.Connection.Closed += (ex) =>
+                    {
+                        App.Current?.Dispatcher?.Invoke(() =>
+                        {
+                            Viewers.Clear();
+                            StatusMessage = "Déconnecté";
+                        });
+                        return Task.CompletedTask;
+                    };
+
+                    _casterSocket.Connection.Reconnecting += (ex) =>
+                    {
+                        App.Current?.Dispatcher?.Invoke(() =>
+                        {
+                            Viewers.Clear();
+                            StatusMessage = "Reconnexion";
+                        });
+                        return Task.CompletedTask;
+                    };
+
+                    _casterSocket.Connection.Reconnected += (id) =>
+                    {
+                        StatusMessage = _sessionId;
+                        return Task.CompletedTask;
+                    };
+
+                    await DeviceInitService.GetInitParams();
+                    ApplyBranding();
+
+                    await GetSessionID();
+
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Write(ex);
+            }
+
+            // If we got here, something went wrong.
+            StatusMessage = "Erreur de connexion";
+            // MessageBox.Show(Application.Current.MainWindow, "Erreur de connexion aux serveurs LENS GROUP.", "Erreur de connexion", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+        
+        // KEVIN
 
         public async Task Init()
         {
