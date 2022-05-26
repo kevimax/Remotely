@@ -201,6 +201,7 @@ namespace Remotely.Desktop.Win.ViewModels
             });
         }
         
+         private ICommand _reconnectcommand;
          public ICommand reconnectcommand
         {
             get
