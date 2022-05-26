@@ -28,10 +28,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <AdditionalFiles Remove="app.manifest" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Assets\favicon.ico" />
     <None Remove="Assets\Remotely_Icon.png" />
   </ItemGroup>
