@@ -36,7 +36,6 @@ if (!IsRunningAsAdministrator())
 
     // Shut down the current (old) process
     System.Windows.Forms.Application.Exit();
-    }
 }
 
 /// <summary>
