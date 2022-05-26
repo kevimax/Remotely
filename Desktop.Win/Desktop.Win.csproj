@@ -50,8 +50,11 @@
   <ItemGroup>
     <Resource Include="Assets\favicon.ico" />
     <EmbeddedResource Include="Assets\Remotely_Icon.png" />
-    <EmbeddedResource Include="Assets\reconnect.png" />
   </ItemGroup>
+   
+   <UserControl.Resources>
+     <Image x:Key="reconnect" Source="Assets\reconnect.png"/>
+   </UserControl.Resources>
 
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
