@@ -78,8 +78,8 @@
                 VerticalContentAlignment="Stretch"
                 HorizontalContentAlignment="Stretch"
                 Margin="10,5"
-                Command="{Binding Path=reconnectcommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"
-                Visibility="{Binding Path=hidereconnectbutton, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
+                Command="{Binding Path=reconnectcommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
+                //Visibility="{Binding Path=hidereconnectbutton, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
             <Rectangle>
 
     <Rectangle.Fill>
