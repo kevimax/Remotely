@@ -262,7 +262,7 @@ namespace Remotely.Desktop.Win.ViewModels
 
             // If we got here, something went wrong.
             StatusMessage = "Erreur de connexion";
-            MessageBox.Show(Application.Current.MainWindow, "Erreur de connexion aux serveurs LENS GROUP.", "Erreur de connexion", MessageBoxButton.OK, MessageBoxImage.Warning);
+            // MessageBox.Show(Application.Current.MainWindow, "Erreur de connexion aux serveurs LENS GROUP.", "Erreur de connexion", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         public void PromptForHostName()
