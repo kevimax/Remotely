@@ -56,19 +56,19 @@ namespace Remotely.Desktop.Win
            if (Environment.GetCommandLineArgs().Contains("-elevate"))
             {
 
-                        var commandLine = Win32Interop.GetCommandLine().Replace(" -elevate", "");
-                        var sections = commandLine.Split('"', StringSplitOptions.RemoveEmptyEntries);
-                        var filePath = sections.First();
-                        var arguments = string.Join('"', sections.Skip(1));
-                        var psi = new ProcessStartInfo(filePath, arguments)
-                        {
-                            Verb = "RunAs",
-                            UseShellExecute = true,
-                            WindowStyle = ProcessWindowStyle.Hidden
-                        };
-                        Process.Start(psi);
-                        Environment.Exit(0);
-                        
+                var commandLine = Win32Interop.GetCommandLine().Replace(" -elevate", "");
+
+                Logger.Write($"Elevating process {commandLine}.");
+                var result = Win32Interop.OpenInteractiveProcess(
+                    commandLine,
+                    -1,
+                    false,
+                    "default",
+                    true,
+                    out var procInfo);
+                Logger.Write($"Elevate result: {result}. Process ID: {procInfo.dwProcessId}.");
+                Environment.Exit(0);
+              
                 }
             _ = Task.Run(Initialize);
         }
