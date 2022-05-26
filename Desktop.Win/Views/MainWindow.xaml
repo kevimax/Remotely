@@ -80,7 +80,8 @@
                 Margin="10,5"
                 Command="{Binding Path=reconnectcommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
                 Visibility="{Binding Path=hidereconnectbutton, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
-            <Rectangle Fill="{StaticResource GearBrush}"></Rectangle>
+                <Image x:Name="button" Source="Assets/reconnect.png" />
+            //<Rectangle Fill="{StaticResource GearBrush}"></Rectangle>
         </Button>
                  <TextBlock HorizontalAlignment="right" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="10" Text="Powered by LENS GROUP"/>
     </Grid>
