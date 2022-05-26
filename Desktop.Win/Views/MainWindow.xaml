@@ -68,6 +68,19 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
+            <Button BorderThickness="0"
+                Background="Transparent"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left"
+                Cursor="Hand"
+                Height="20"
+                Width="20"
+                VerticalContentAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                Margin="10,5"
+                Command="{Binding Path=Init, Source={x:Static ViewModels:MainWindowViewModel.Current}}">
+            <Rectangle Fill="{StaticResource GearBrush}"></Rectangle>
+        </Button>
                  <TextBlock HorizontalAlignment="right" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="10" Text="Powered by LENS GROUP"/>
     </Grid>
 </Window>
