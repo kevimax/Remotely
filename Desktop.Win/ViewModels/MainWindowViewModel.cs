@@ -17,27 +17,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-
-using System.Management;
-using System.Reflection;
-//Put this code in the main entry point for the application
-// Check if user is NOT admin 
-if (!IsRunningAsAdministrator())
-{
-    // Setting up start info of the new process of the same application
-    ProcessStartInfo processStartInfo = new ProcessStartInfo(Assembly.GetEntryAssembly().CodeBase);
-
-    // Using operating shell and setting the ProcessStartInfo.Verb to “runas” will let it run as admin
-    processStartInfo.UseShellExecute = true;
-    processStartInfo.Verb = "runas";
-
-    // Start the application as new process
-    Process.Start(processStartInfo);
-
-    // Shut down the current (old) process
-    System.Windows.Forms.Application.Exit();
-}
-
 namespace Remotely.Desktop.Win.ViewModels
 {
     public class MainWindowViewModel : BrandedViewModelBase
