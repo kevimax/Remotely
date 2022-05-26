@@ -49,34 +49,19 @@
                     <Button Grid.Column="3" Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="#e1e1e1" />
                 </Grid>
             </Border>
-            <Grid Margin="10,15,10,0">
+            <Grid Margin="10,15,10,0" Background="#ffffff">
+                 <Border.Effect>
+                 <DropShadowEffect/>
+                 </Border.Effect>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="0,0,15,0">
-                    <TextBlock FontSize="15"><Run Text="Identifiant:"/></TextBlock>
-                    <TextBlock Margin="0,10,0,0" HorizontalAlignment="center" VerticalAlignment="center" Foreground="#FF4242" FontSize="30" Text="{Binding StatusMessage}"/>
+                    <TextBlock FontSize="18"><Run Text="Identifiant:"/></TextBlock>
+                    <TextBlock Margin="0,20,0,0" HorizontalAlignment="center" VerticalAlignment="center" Foreground="#FF4242" FontSize="30" Text="{Binding StatusMessage}"/>
+                    <TextBlock HorizontalAlignment="left" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="8" Text="Powered by LENS GROUP"/>
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <Button BorderThickness="0"
-                Background="Transparent"
-                VerticalAlignment="Bottom" 
-                HorizontalAlignment="Left"
-                Cursor="Hand"
-                Height="20"
-                Width="20"
-                VerticalContentAlignment="Stretch"
-                HorizontalContentAlignment="Stretch"
-                Margin="10,5"
-                Click="OptionsButton_Click">
-            <Button.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Droits Admin" Command="{Binding Path=ElevateToAdminCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
-                    <MenuItem Header="Droits Service" Command="{Binding Path=ElevateToServiceCommand, Source={x:Static ViewModels:MainWindowViewModel.Current}}"></MenuItem>
-                </ContextMenu>
-            </Button.ContextMenu>
-            <Rectangle Fill="{StaticResource GearBrush}"></Rectangle>
-        </Button>
     </Grid>
 </Window>
