@@ -201,6 +201,16 @@ namespace Remotely.Desktop.Win.ViewModels
             });
         }
         
+         public ICommand reconnectcommand
+        {
+            get
+            {
+                return _reconnectcommand ??
+                       (_reconnectcommand = new 
+                        RelayCommandAsync(Init, (c) => true));
+            }
+        }
+        
         public async Task Init()
         {
             StatusMessage = "Connexion...";
