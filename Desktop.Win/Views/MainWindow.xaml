@@ -49,7 +49,7 @@
                     <Button Grid.Column="3" Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="#e1e1e1" />
                 </Grid>
             </Border>
-            <Grid Margin="10,15,10,0" Background="#ffffff">
+            <Grid Margin="10,15,10,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
@@ -58,7 +58,7 @@
                     <TextBlock Margin="0,20,0,0" HorizontalAlignment="center" VerticalAlignment="center" Foreground="#FF4242" FontSize="30" Text="{Binding StatusMessage}">
                         <TextBlock.Effect>
                                 <DropShadowEffect
-                                 ShadowDepth="4"
+                                 ShadowDepth="2"
                                  Direction="330"
                                  Color="Black"
                                  Opacity="0.5"
@@ -66,8 +66,8 @@
                          </TextBlock.Effect>
                     </TextBlock>
                 </StackPanel>
-                    <TextBlock HorizontalAlignment="right" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="10" Text="Powered by LENS GROUP"/>
             </Grid>
+                <TextBlock HorizontalAlignment="right" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="10" Text="Powered by LENS GROUP"/>
         </StackPanel>
     </Grid>
 </Window>
