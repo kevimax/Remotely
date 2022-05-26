@@ -246,9 +246,12 @@ namespace Remotely.Desktop.Win.ViewModels
         }
     }  
         
+        private bool _hidereconnectbutton;
+        
         public async Task Init()
         {
             StatusMessage = "Connexion...";
+            _hidereconnectbutton = true;
 
             Host = _configService.GetConfig().Host;
 
@@ -272,6 +275,7 @@ namespace Remotely.Desktop.Win.ViewModels
                         {
                             Viewers.Clear();
                             StatusMessage = "Déconnecté";
+                            _hidereconnectbutton = false;
                         });
                         return Task.CompletedTask;
                     };
@@ -282,6 +286,7 @@ namespace Remotely.Desktop.Win.ViewModels
                         {
                             Viewers.Clear();
                             StatusMessage = "Reconnexion";
+                            _hidereconnectbutton = true;
                         });
                         return Task.CompletedTask;
                     };
@@ -307,6 +312,7 @@ namespace Remotely.Desktop.Win.ViewModels
 
             // If we got here, something went wrong.
             StatusMessage = "Erreur de connexion";
+            _hidereconnectbutton = false;
             // MessageBox.Show(Application.Current.MainWindow, "Erreur de connexion aux serveurs LENS GROUP.", "Erreur de connexion", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
