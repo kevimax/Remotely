@@ -50,21 +50,23 @@
                 </Grid>
             </Border>
             <Grid Margin="10,15,10,0" Background="#ffffff">
-                <Grid.Effect>
-                <DropShadowEffect BlurRadius="300"
-                              Color="#877b77"
-                              Opacity="100"
-                              ShadowDepth="10"
-                              Direction="0" />
-                </Grid.Effect>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="0,0,15,0">
                     <TextBlock FontSize="18"><Run Text="Identifiant:"/></TextBlock>
-                    <TextBlock Margin="0,20,0,0" HorizontalAlignment="center" VerticalAlignment="center" Foreground="#FF4242" FontSize="30" Text="{Binding StatusMessage}"/>
-                    <TextBlock HorizontalAlignment="left" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="8" Text="Powered by LENS GROUP"/>
+                    <TextBlock Margin="0,20,0,0" HorizontalAlignment="center" VerticalAlignment="center" Foreground="#FF4242" FontSize="30" Text="{Binding StatusMessage}">
+                        <TextBlock.Effect>
+                                <DropShadowEffect
+                                 ShadowDepth="4"
+                                 Direction="330"
+                                 Color="Black"
+                                 Opacity="0.5"
+                                 BlurRadius="4"/>
+                         </TextBlock.Effect>
+                    </TextBlock>
                 </StackPanel>
+                    <TextBlock HorizontalAlignment="right" VerticalAlignment="bottom" Foreground="#e0e0e0" FontSize="10" Text="Powered by LENS GROUP"/>
             </Grid>
         </StackPanel>
     </Grid>
