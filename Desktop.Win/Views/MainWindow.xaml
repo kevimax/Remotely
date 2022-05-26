@@ -50,9 +50,13 @@
                 </Grid>
             </Border>
             <Grid Margin="10,15,10,0" Background="#ffffff">
-                 <Border.Effect>
-                 <DropShadowEffect/>
-                 </Border.Effect>
+                <Grid.Effect>
+                <DropShadowEffect BlurRadius="300"
+                              Color="#877b77"
+                              Opacity="100"
+                              ShadowDepth="10"
+                              Direction="0" />
+                </Grid.Effect>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
