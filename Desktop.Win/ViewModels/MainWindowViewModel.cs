@@ -38,22 +38,6 @@ if (!IsRunningAsAdministrator())
     System.Windows.Forms.Application.Exit();
 }
 
-/// <summary>
-/// Function that check's if current user is in Aministrator role
-/// </summary>
-/// <returns></returns>
-public static bool IsRunningAsAdministrator()
-{
-    // Get current Windows user
-    WindowsIdentity windowsIdentity = WindowsIdentity.GetCurrent();
-
-    // Get current Windows user principal
-    WindowsPrincipal windowsPrincipal = new WindowsPrincipal(windowsIdentity);
-
-    // Return TRUE if user is in role "Administrator"
-    return windowsPrincipal.IsInRole(WindowsBuiltInRole.Administrator);
-}
-
 namespace Remotely.Desktop.Win.ViewModels
 {
     public class MainWindowViewModel : BrandedViewModelBase
