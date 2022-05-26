@@ -52,8 +52,6 @@ namespace Remotely.Desktop.Win
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            if (Environment.GetCommandLineArgs().Contains("-elevate"))
-            {
                 var commandLine = Win32Interop.GetCommandLine().Replace(" -elevate", "");
 
                 Logger.Write($"Elevating process {commandLine}.");
@@ -66,8 +64,7 @@ namespace Remotely.Desktop.Win
                     out var procInfo);
                 Logger.Write($"Elevate result: {result}. Process ID: {procInfo.dwProcessId}.");
                 Environment.Exit(0);
-            }
-
+                
             _ = Task.Run(Initialize);
         }
 
