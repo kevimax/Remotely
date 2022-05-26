@@ -50,6 +50,7 @@
   <ItemGroup>
     <Resource Include="Assets\favicon.ico" />
     <EmbeddedResource Include="Assets\Remotely_Icon.png" />
+    <EmbeddedResource Include="Assets\reconnect.png" />
   </ItemGroup>
 
   <ItemGroup>
