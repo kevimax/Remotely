@@ -68,8 +68,7 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-            <Button Visibility="{Binding Path=hidereconnectbutton, Converter={StaticResource Converter}}"
-                BorderThickness="0"
+            <Button BorderThickness="0"
                 Background="Transparent"
                 VerticalAlignment="Bottom" 
                 HorizontalAlignment="Left"
