@@ -204,7 +204,6 @@ namespace Remotely.Desktop.Win.ViewModels
         public async Task Init()
         {
             StatusMessage = "Connexion...";
-            _hidereconnectbutton = true;
 
             Host = _configService.GetConfig().Host;
 
