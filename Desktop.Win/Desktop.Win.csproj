@@ -52,6 +52,10 @@
     <EmbeddedResource Include="Assets\Remotely_Icon.png" />
     <EmbeddedResource Include="Assets\reconnect.png" />
   </ItemGroup>
+   
+  <Window.Resources>
+    <BooleanToVisibilityConverter x:Key="Converter" />
+  </Window.Resources>
 
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
