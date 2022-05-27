@@ -201,53 +201,6 @@ namespace Remotely.Desktop.Win.ViewModels
             });
         }
         
-         private ICommand _reconnectcommand;
-         public ICommand reconnectcommand
-        {
-            get
-            {
-                return _reconnectcommand ??
-                       (_reconnectcommand = new 
-                        RelayCommandAsync(Init, (c) => true));
-            }
-        }
-        
-        public class RelayCommandAsync : ICommand
-    {
-        private readonly Func<Task> _execute;
-        private readonly Predicate<object> _canExecute;
-        private bool isExecuting;
-
-        public RelayCommandAsync(Func<Task> execute) : this(execute, null) { }
-
-        public RelayCommandAsync(Func<Task> execute, Predicate<object> canExecute)
-        {
-            _execute = execute;
-            _canExecute = canExecute;
-        }
-
-        public bool CanExecute(object parameter)
-        {
-            if (!isExecuting && _canExecute == null) return true;
-            return (!isExecuting && _canExecute(parameter));
-        }
-
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
-
-        public async void Execute(object parameter)
-        {
-            isExecuting = true;
-            try { await _execute(); }
-            finally { isExecuting = false; }
-        }
-    }  
-        
-        private bool _hidereconnectbutton;
-        
         public async Task Init()
         {
             StatusMessage = "Connexion...";
@@ -275,7 +228,6 @@ namespace Remotely.Desktop.Win.ViewModels
                         {
                             Viewers.Clear();
                             StatusMessage = "Déconnecté";
-                            _hidereconnectbutton = false;
                         });
                         return Task.CompletedTask;
                     };
@@ -286,7 +238,6 @@ namespace Remotely.Desktop.Win.ViewModels
                         {
                             Viewers.Clear();
                             StatusMessage = "Reconnexion";
-                            _hidereconnectbutton = true;
                         });
                         return Task.CompletedTask;
                     };
@@ -312,15 +263,9 @@ namespace Remotely.Desktop.Win.ViewModels
 
             // If we got here, something went wrong.
             StatusMessage = "Erreur de connexion";
-            _hidereconnectbutton = false;
             // MessageBox.Show(Application.Current.MainWindow, "Erreur de connexion aux serveurs LENS GROUP.", "Erreur de connexion", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
-
-            public bool hidereconnectbutton        
-        {
-            get { return _hidereconnectbutton; }
-        }
-
+        
         public void PromptForHostName()
         {
             var prompt = new HostNamePrompt();
